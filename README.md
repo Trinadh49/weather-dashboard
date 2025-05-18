@@ -1,33 +1,25 @@
-import requests
+# 🌦️ Weather Dashboard (CLI)
 
-API_KEY = "YOUR_API_KEY_HERE"  # Replace with your actual key
-BASE_URL = "http://api.openweathermap.org/data/2.5/weather"
+A simple Python command-line tool that fetches and displays real-time weather information for any city using the OpenWeatherMap API.
 
-def get_weather(city):
-    params = {
-        'q': city,
-        'appid': API_KEY,
-        'units': 'metric'
-    }
-    response = requests.get(BASE_URL, params=params)
-    
-    if response.status_code == 200:
-        data = response.json()
-        print(f"\nWeather in {data['name']} ({data['sys']['country']}):")
-        print(f"Temperature: {data['main']['temp']}°C")
-        print(f"Weather: {data['weather'][0]['description'].capitalize()}")
-        print(f"Humidity: {data['main']['humidity']}%")
-        print(f"Wind Speed: {data['wind']['speed']} m/s")
-    else:
-        print("\n❌ City not found. Please try again.")
+## 🚀 Features
 
-def main():
-    print("=== Weather Dashboard ===")
-    while True:
-        city = input("\nEnter city name (or type 'exit' to quit): ")
-        if city.lower() == 'exit':
-            break
-        get_weather(city)
+- Get current temperature, weather condition, humidity, and wind speed
+- Real-time data using OpenWeatherMap
+- Input any city name
+- Clean, user-friendly output
+- Graceful handling of invalid city names
 
-if __name__ == "__main__":
-    main()
+## 🛠️ Tech Stack
+
+- Python 3
+- `requests` library
+- OpenWeatherMap API
+
+## 📦 Installation
+
+1. **Clone the repository**:
+
+   ```bash
+   git clone https://github.com/your-username/weather-dashboard.git
+   cd weather-dashboard
