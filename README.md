@@ -23,3 +23,7 @@ A simple Python command-line tool that fetches and displays real-time weather in
    ```bash
    git clone https://github.com/your-username/weather-dashboard.git
    cd weather-dashboard
+   python -m venv venv
+source venv/bin/activate   # On Windows: venv\Scripts\activate
+pip install -r requirements.txt
+API_KEY = "YOUR_API_KEY_HERE"
